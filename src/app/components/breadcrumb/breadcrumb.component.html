@@ -1,0 +1,15 @@
+<div>
+    <span><a class="text-secondary text-decoration-none g-font-size-16">Inicio</a></span>
+    <span class="g-font-size-16"> / </span>
+
+    <span><a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiS">Superación academica</a></span>
+    <span class="g-font-size-16" *ngIf="IiS"> / </span>
+
+    <!-- Superacion academica child -->
+    <span class="fw-bold g-font-size-16" *ngIf="IiSCE" routerLink="/SuperacionAcademica/SolicitudCitas">Solicitudes de citas</span>
+    
+    <!-- Solicitud de citas child -->
+    <a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiSCEP" routerLink="/SuperacionAcademica/SolicitudCitas">Solicitudes de citas</a>
+    <span class="g-font-size-16" *ngIf="IiSCEP"> / </span>
+    <span class="fw-bold g-font-size-16" *ngIf="IiSCEP" routerLink="/SuperacionAcademica/SolicitudCitas/Registro">Alta de cita</span>
+</div>
