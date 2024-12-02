@@ -1,0 +1,76 @@
+
+<div class="container">
+    <div class="g-font-size-12">
+        <app-breadcrumb [whereIam]="'Registro'"></app-breadcrumb>
+    </div>
+
+    <div class="mt-3">
+        <form [formGroup]="NewRequest" class="mt-3">
+            <mat-form-field class="col-md-2" [hidden]>
+                <mat-label>No. Personal</mat-label>
+                <input formControlName="NoPer" matInput/>
+                <mat-error *ngIf="NewRequest.invalid">No. Personal no capturado</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-5" [hidden]>
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="Nombre"/>
+                <mat-error *ngIf="NewRequest.invalid">Nombre no capturado</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-5" [hidden]>
+                <mat-label>Sede</mat-label>
+                <input matInput formControlName="Sede"/>
+                <mat-error *ngIf="NewRequest.invalid">Sede no capturado</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6" [hidden]>
+                <mat-label>Programa educativo</mat-label>
+                <mat-select formControlName="Programa">
+                    <mat-option></mat-option>
+                </mat-select>
+                <mat-error *ngIf="NewRequest.invalid">Por favor, seleccionar un programa educativo.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6" [hidden]>
+                <mat-label>Lugar</mat-label>
+                <input matInput formControlName="Lugar" [matAutocomplete]="Lugar">
+                <mat-autocomplete #Lugar="matAutocomplete"></mat-autocomplete>
+                <mat-error *ngIf="NewRequest.invalid">Por favor, de escribir el lugar</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-4" [hidden]>
+                <mat-label>Modalidad</mat-label>
+                <mat-select formControlName="Modalidad">
+                    <mat-option></mat-option>
+                </mat-select>
+                <mat-error *ngIf="NewRequest.invalid">Por favor, seleccionar una modalidad.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2" [hidden]>
+                <mat-label>Fecha de inicio</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" formControlName="FechaI" [matDatepicker]="picker_01" (click)="picker_01.open()" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker_01"></mat-datepicker-toggle>
+                <mat-datepicker #picker_01 startView="year"></mat-datepicker>
+                <mat-error *ngIf="NewRequest.invalid">Por favor, de seleccionar la fecha de inicio</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2" [hidden]>
+                <mat-label>Fecha de término</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" formControlName="FechaT" [matDatepicker]="picker_02" (click)="picker_02.open()" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker_02"></mat-datepicker-toggle>
+                <mat-datepicker #picker_02 startView="year"></mat-datepicker>
+                <mat-error *ngIf="NewRequest.invalid">Por favor, de seleccionar la fecha de término</mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="col text-end mt-5">
+        <button class="button button-cancelar" (click)="regresar()">
+            <span>Regresar</span>
+        </button>
+        <button class="button button-guardar" >
+            <span>Guardar</span>
+        </button>
+    </div>
+</div>
