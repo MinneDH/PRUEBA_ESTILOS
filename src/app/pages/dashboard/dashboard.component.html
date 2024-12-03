@@ -1,0 +1,139 @@
+<div class="container">
+    <div class="g-font-size-12">
+        <app-breadcrumb [whereIam]="'Solicitud'"></app-breadcrumb>
+    </div>
+
+    <div class="mt-3">
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Activos">
+
+                <div class="Busqueda">
+                    <mat-form-field class="col-md-3" >
+                        <mat-label>Buscar</mat-label>
+                        <input matInput placeholder="Buscar" />
+                        <img src="assets/img/icons/ic-search.svg"/>
+                    </mat-form-field>
+
+                    <button class="button button-guardar" type="button" (click)="GoModalRegistro('');">
+                        <span >Nuevo registro</span>
+                    </button>
+                </div>
+
+                <div class="mat-elevation-z8 m-3">
+                    <mat-table #CSort="matSort" [dataSource]="dataSourceC" matSort class="backgroud-head-table">
+                        <ng-container matColumnDef="id">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-10"> ID </mat-header-cell>
+                            <mat-cell *matCellDef="let row" data-label="ID" class="tableContainer-10">{{row.ID}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Nombre">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-30"> Nombre </mat-header-cell>
+                            <mat-cell *matCellDef="let row" data-label="Nombre" class="tableContainer-30">{{row.Nombre}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Acciones">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-10"> Acciones </mat-header-cell>
+                            <mat-cell *matCellDef="let row" data-label="Acciones" class="tableContainer-10">
+                                <img src="assets/img/icons/ic_view.svg"  matTooltip="Visualizar" class="pointer" (click)="openModalView();"/>
+                                <img src="assets/img/icons/ic_editar.svg"  matTooltip="Editar"class="pointer"/>
+                                <img src="assets/img/icons/ic_eliminar.svg"  matTooltip="Eliminar" class="pointer" (click)="openModalDelete();"/>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+                    </mat-table>
+                    <mat-paginator #CPaginator="matPaginator" [pageSizeOptions]="[10,25,50,100]"></mat-paginator>
+                </div>
+
+
+            </mat-tab>
+
+            <mat-tab label="Concluidos">
+                <div class="Busqueda">
+                    <mat-form-field class="col-md-3">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput placeholder="Buscar" />
+                        <img src="assets/img/icons/ic-search.svg"/>
+                    </mat-form-field>
+                </div>
+
+                <div class="mat-elevation-z8 m-3">
+                    <mat-table #CSort="matSort" [dataSource]="dataSourceC" matSort class="backgroud-head-table">
+                        <ng-container matColumnDef="id">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-10"> ID </mat-header-cell>
+                            <mat-cell *matCellDef="let row" data-label="ID" class="tableContainer-10">{{row.Data}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Nombre">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-30"> Nombre </mat-header-cell>
+                            <mat-cell *matCellDef="let row" data-label="Nombre" class="tableContainer-30">{{row.Data}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Acciones">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-10"> Acciones </mat-header-cell>
+                            <mat-cell *matCellDef="let row" data-label="Acciones" class="tableContainer-10">
+                                <img src="assets/img/icons/ic_view.svg"  matTooltip="Visualizar" class="pointer"/>
+                                <img src="assets/img/icons/ic_editar.svg"  matTooltip="Editar"class="pointer"/>
+                                <img src="assets/img/icons/ic_eliminar.svg"  matTooltip="Eliminar" class="pointer"/>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+                    </mat-table>
+                    <mat-paginator #CPaginator="matPaginator" [pageSizeOptions]="[10,25,50,100]"></mat-paginator>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <ng-template #Modalview let-modal>
+        <div class="EspaciadoModal"></div>
+        <div class="modal-align-center">
+            <div class="modal-header header-modal">
+                <h4 class="modal-title g-font-size-16 roboto-bold m-0">Detalles</h4>
+                <button class="btn-close btn-close-white text-white" aria-label="close" type="button" (click)="closeModal()"></button>
+            </div>
+
+            <form [formGroup]="ModalView" class="modal-body content-modal justify-content-center">
+                <div class="container">
+                    <p>&nbsp;<i class="fas fa-passport"></i>&nbsp;<b>ID:</b>&nbsp;{{('Sin información' )}}</p>
+                    <p>&nbsp;<i class="fas fa-book-reader"></i>&nbsp;<b>Nombre:</b>&nbsp;{{('Sin información' )}}</p>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="button button-guardar" (click)="closeModal()">
+                        <span>Cerrar</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </ng-template>
+
+    <ng-template #Modaldelete let-modal>
+        <div class="EspaciadoModal"></div>
+        <div class="modal-align-center">
+            <div class="modal-header header-modal">
+                <h4 class="modal-title g-font-size-16 roboto-bold m-0">Eliminar</h4>
+                <button  class="btn-close btn-close-white text-white" aria-label="close" type="button" (click)="closeModal()"></button>
+            </div>
+
+            <form [formGroup]="ModalDelete" class="modal-body content-modal text-center">
+                <div class="container">
+                <div class="row justify-content-center mb-3">
+                    <i class="fas fa-exclamation-triangle fa-7x text-danger"></i>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <span class="g-font-size-16">
+                    <b>Atención: Se dará de baja el registro</b>
+                    </span>
+                </div>
+                <button class="button button-cancelar" (click)="closeModal()">
+                    <span >Cancelar</span>
+                </button>
+                <button class="button button-guardar" type="button">
+                    <span >Eliminar</span>
+                </button>
+                </div>
+            </form>
+        </div>
+    </ng-template>
+</div>
