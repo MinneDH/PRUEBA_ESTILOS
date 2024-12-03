@@ -6,8 +6,14 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
-export interface DatosMuestra { Data: any; }
-const fake_DATA: DatosMuestra[] = [{ Data: "----", }];
+export interface DatosMuestra {ID:any, Nombre:any, Data: any; }
+const fake_DATA: DatosMuestra[] = [
+  { 
+    ID: "1", 
+    Nombre: "Citas de Superación Académica", 
+    Data: "En este podcast encontrarán todo lo relacionado con las citas de superación académica y unas actividades con respecto a esto.",
+  }
+];
 
 @Component({
   selector: 'app-dashboard',
