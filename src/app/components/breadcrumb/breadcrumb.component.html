@@ -2,14 +2,22 @@
     <span><a class="text-secondary text-decoration-none g-font-size-16">Inicio</a></span>
     <span class="g-font-size-16"> / </span>
 
-    <span><a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiS">Superación academica</a></span>
+    <span><a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiS">SISEC</a></span>
     <span class="g-font-size-16" *ngIf="IiS"> / </span>
 
-    <!-- Superacion academica child -->
-    <span class="fw-bold g-font-size-16" *ngIf="IiSCE" routerLink="/SuperacionAcademica/SolicitudCitas">Solicitudes de citas</span>
+    <!-- SISEC child -->
+    <span class="fw-bold g-font-size-16" *ngIf="IiSCE">Solicitudes de citas</span>
+    <span class="fw-bold g-font-size-16" *ngIf="IiProyectos">Gestión de proyectos</span>
+    <span class="fw-bold g-font-size-16" *ngIf="IiUsuarios">Usuarios</span>
+    
     
     <!-- Solicitud de citas child -->
-    <a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiSCEP" routerLink="/SuperacionAcademica/SolicitudCitas">Solicitudes de citas</a>
+    <a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiSCEP" >Solicitudes de citas</a>
     <span class="g-font-size-16" *ngIf="IiSCEP"> / </span>
-    <span class="fw-bold g-font-size-16" *ngIf="IiSCEP" routerLink="/SuperacionAcademica/SolicitudCitas/Registro">Alta de cita</span>
+    <span class="fw-bold g-font-size-16" *ngIf="IiSCEP">Alta de cita</span>
+
+    <!-- Gestopm de proyectos childs -->
+    <a class="text-secondary text-decoration-none g-font-size-16" *ngIf="IiProyectosP">Gestión de proyectos</a>
+    <span class="g-font-size-16" *ngIf="IiProyectosP"> / </span>
+    <span class="fw-bold g-font-size-16" *ngIf="IiProyectosP">Alta de proyecto</span>
 </div>

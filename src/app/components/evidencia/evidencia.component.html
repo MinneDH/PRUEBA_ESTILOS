@@ -1,0 +1,40 @@
+<!-- Version: Prod-23012023 -->
+<div class="PrincipalBox">
+    <div class="dropzone">
+        <div class="dropzone-file">
+            <div class="dropzone-button">
+                <ng-container *ngIf="files.length >0 else elseButton;">
+                    <div class="drop-here mb-1">
+                        <i class="fas fa-cloud-upload-alt fa-2x"></i>
+                        <p>Arrastre o agregue un archivo aquí</p>
+                    </div>
+                    <div class="file-uploaded">
+                        <div *ngFor="let File of files" class="FileData">
+                            <div (click)="previewData(File)">
+                                <span class="d-flex justify-content-center">
+                                    <img *ngIf="File.type.startsWith('application/pdf')"
+                                        src="assets/img/icons/ic-pdf.svg" />
+                                    <img *ngIf="File.type.startsWith('image/')" src="assets/img/icons/ic-image.svg" />
+                                    <img *ngIf="File.type.startsWith('audio/')" src="assets/img/icons/ic-audio.svg" />
+                                    <img *ngIf="File.type.startsWith('video/')" src="assets/img/icons/ic-video.svg" />
+                                </span>
+                                <span class="d-flex justify-content-center">
+                                    {{File.name.substring(0,25)}}
+                                </span>
+                            </div>
+                            <i class="fas fa-times-circle" (click)="deleteFile(File)"></i>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-template #elseButton>
+                    <div class="drop-here">
+                        <i class="fas fa-cloud-upload-alt fa-lg"></i>
+                        <p>Arrastre o agregue un archivo aquí</p>
+                    </div>
+                </ng-template>
+            </div>
+            <input #file id="file" type="file" (change)="addFile($event)" multiple="true" value="ValorFile" accept="{{allowedFiles}}">
+        </div>
+        <small class="errorMsgArchive">{{errorMsg}}</small>
+    </div>
+</div>

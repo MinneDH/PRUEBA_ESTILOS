@@ -6,6 +6,7 @@ import { SharedModule } from './components/Shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getDutchPaginatorIntl } from './components/dutch-paginator-intl';
+import { MenuPluginComponent } from './components/menu-plugin/menu-plugin.component';
 
 @NgModule({
   declarations: [
