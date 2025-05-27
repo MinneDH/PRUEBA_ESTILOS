@@ -1,0 +1,188 @@
+
+/* Version: Prod-23012023 */
+
+.showboxes-border{
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+    background-color: var(--White);
+    box-shadow: 3px 4px 3px 3px var(--Gray_400);
+    margin: 1vh 1vh 3vh;
+
+    }
+  .showboxes-inner{
+      background-color: var(--Blue_Gray_50);
+      padding:0px 0px 10px 20px;
+      border-radius: 10px;
+      height: auto;
+      min-height: 12em;
+      width: 100%;
+  }
+  .showboxes-content{ flex: 19;  padding: 10px 30px 20px 10px;
+    mat-expansion-panel{word-break: break-word;}
+    }
+  .showboxes-bookmark{padding: 0px 0px 10px 20px;flex: 0;}
+  .Simbologia-PEI{padding: 10px;}
+  .showboxes-bookmark, .Simbologia-PEI{
+      #Borrador{color: var(--Gray_700);}
+      #Registrado{color: var(--info);}
+      #Eval{color:var(--Light_Green_700);}
+      #Incompleto{color: var(--Amber_500);}
+      #NoCumple{color: var(--Deep_Orange_900);}
+      #Historico{color: var(--Brown_500);}
+    }
+  .showboxes-actions{flex: 1.5;img{height: 35px;}; display: flex;flex-direction: column;justify-content: center;padding: 1.5vw;}
+
+  .assign{img{height: 35px;}; display: flex;flex-direction: column;justify-content: center;}
+
+  .showboxes-feactures{
+    flex: 5;
+    padding-top: 15px;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    i{color: var(--secondary);}
+  }
+  .showboxes-features-noActions{
+    flex: 5;
+    padding-top: 15px;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right:4vw;
+    i{color: var(--secondary);}
+  }
+  .resumenM{
+    p{
+        text-align:left;
+        font-size: small;
+        font-weight:700 ;
+        font-style: normal;
+        margin-left: 10%;
+        span{
+          font-style:oblique;
+          font-weight:lighter;
+          word-break: break-all;
+        }
+    }
+}
+
+#NammeM{ display: flex;align-items: center; p{margin: 0px!important;padding: 5px;}}
+.card-members-bodyM{
+  display:inline-flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-items: center;
+  justify-content: center;
+  background-color: var(--Blue_Gray_50);
+  padding: 12px;
+  border-radius: 10px;
+  max-height: 15em;
+  overflow: auto;
+  min-width: 100%;
+  min-height: 10em;
+
+}
+
+.card-members-dontbodyM{
+  background-color: var(--Blue_Gray_50);
+  text-align: center;
+  color: var(--Gray_700);
+  padding: 10px 20px 10px 20px;
+}
+
+.card-members-contentM{color: var(--Gray_700); align-items: center; width: 20vw; text-align: left;   }
+
+.card-members-panelM{display: inline-flex; width: fixed; justify-items: center; mat-accordion{
+  width: 30vw;
+
+}}
+.mat-radio-buttonM{padding: 3px;}
+
+.mat-action-rowM{padding: 10px 8px 10px 24px;}
+
+.card-members-headerM{
+  background-color:var(--Gray_700);
+  padding: 10px 0px 10px 20px;
+  border-radius: 10px 10px 0px 0px;
+  color: var(--White);
+  h3{margin: 0px;}
+  justify-content: center;
+}
+.card-membersM{
+  margin: 20px 0px 20px 0px;
+  box-shadow: 3px 4px 3px 3px var(--Gray_400);
+  border-radius: 10px;
+}
+.puntSty{
+  h2{
+    overflow-wrap: break-word;
+    font-size:small;
+    text-align: center;
+    font-weight: bold;
+  }
+
+}
+.showboxes-features-noActions{
+  flex: 5;
+  padding-top: 15px;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right:4vw;
+  i{color: var(--secondary);}
+}
+
+.showboxes-border-admPEI {
+  padding: 15px 20px 15px 20px;
+  border-radius: 10px;
+  background-color: var(--White);
+  box-shadow: 3px 4px 3px 3px var(--Gray_400);
+  margin: 1vh 1vh 3vh;
+}
+
+.showboxes-inner-admPEI {
+  background-color: var(--Blue_Gray_50);
+  padding: 0px 0px 10px 20px;
+  border-radius: 10px;
+  min-height: 12em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 320px;
+}
+
+.no-msg {
+  color: var(--Gray_700);
+  padding: 9vh;
+}
+
+.boxchat-admPEI {
+  display: flex;
+}
+
+.chat-admPEI {
+  width: 45%;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: justify;
+  padding: 10px;
+}
+
+.chat-admPEI {
+  background-color: var(--Gray_400);;
+
+  span {
+    color: var(--Cyan_1000);
+  }
+
+  color: var(--Black);
+}
+
+
+.fz14{
+  font-size: 14px !important;
+}

@@ -27,6 +27,6 @@ export class RegistroComponent implements OnInit {
 
 
   regresar(){
-    this.router.navigate(['/SuperacionAcademica/SolicitudCitas']);
+    this.router.navigate(['/menu/SolicitudesDeCitas']);
   }
 }

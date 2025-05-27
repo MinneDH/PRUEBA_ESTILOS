@@ -11,6 +11,9 @@ export class BreadcrumbComponent implements OnInit {
   IiS = false;
   IiSCE = false;
   IiSCEP = false;
+  IiProyectos = false;
+  IiUsuarios = false
+  IiProyectosP = false;
 
   constructor() {}
 
@@ -24,9 +27,25 @@ export class BreadcrumbComponent implements OnInit {
         this.IiS = true;
         this.IiSCE = true;
       break;
+      
       case "Registro":
         this.IiS = true;
         this.IiSCEP = true;
+      break;
+
+      case "Proyectos":
+        this.IiS = true;
+        this.IiProyectos = true;
+      break;
+
+      case "ProyectosP":
+        this.IiS = true;
+        this.IiProyectosP = true;
+      break;
+
+      case "Usuarios":
+        this.IiS = true;
+        this.IiUsuarios = true;
       break;
     }
   }

@@ -61,20 +61,20 @@
                     <mat-table #CSort="matSort" [dataSource]="dataSourceC" matSort class="backgroud-head-table">
                         <ng-container matColumnDef="id">
                             <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-10"> ID </mat-header-cell>
-                            <mat-cell *matCellDef="let row" data-label="ID" class="tableContainer-10">{{row.Data}}</mat-cell>
+                            <mat-cell *matCellDef="let row" data-label="ID" class="tableContainer-10">{{row.ID}}</mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="Nombre">
                             <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-30"> Nombre </mat-header-cell>
-                            <mat-cell *matCellDef="let row" data-label="Nombre" class="tableContainer-30">{{row.Data}}</mat-cell>
+                            <mat-cell *matCellDef="let row" data-label="Nombre" class="tableContainer-30">{{row.Nombre}}</mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="Acciones">
                             <mat-header-cell *matHeaderCellDef mat-sort-header class="tableContainer-10"> Acciones </mat-header-cell>
                             <mat-cell *matCellDef="let row" data-label="Acciones" class="tableContainer-10">
-                                <img src="assets/img/icons/ic_view.svg"  matTooltip="Visualizar" class="pointer"/>
+                                <img src="assets/img/icons/ic_view.svg"  matTooltip="Visualizar" class="pointer" (click)="openModalView();"/>
                                 <img src="assets/img/icons/ic_editar.svg"  matTooltip="Editar"class="pointer"/>
-                                <img src="assets/img/icons/ic_eliminar.svg"  matTooltip="Eliminar" class="pointer"/>
+                                <img src="assets/img/icons/ic_eliminar.svg"  matTooltip="Eliminar" class="pointer" (click)="openModalDelete();"/>
                             </mat-cell>
                         </ng-container>
                         <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>

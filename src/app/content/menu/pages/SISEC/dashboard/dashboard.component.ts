@@ -13,6 +13,12 @@ const fake_DATA: DatosMuestra[] = [
     Nombre: "Citas de Superación Académica", 
     Data: "En este podcast encontrarán todo lo relacionado con las citas de superación académica y unas actividades con respecto a esto.",
   }
+  , 
+  { 
+    ID: "2", 
+    Nombre: "Citas de Tutoría", 
+    Data: "En este podcast encontrarán todo lo relacionado con las citas de tutoría y unas actividades con respecto a esto.",
+  }
 ];
 
 @Component({
@@ -58,7 +64,7 @@ export class DashboardComponent implements OnInit {
   GoModalRegistro(accion: any){
     let queryParams={accion:accion}
     localStorage.setItem('queryParams',JSON.stringify(queryParams));
-    this.router.navigate(['/SuperacionAcademica/SolicitudCitas/Registro']);
+    this.router.navigate(['/menu/SolicitudesDeCitas/Registro']);
   }
 
 }

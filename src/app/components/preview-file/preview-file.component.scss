@@ -1,0 +1,11 @@
+
+/* Version: Prod-23012023 */
+
+.btn-flotante {
+	font-weight: bold; /* Fuente en negrita o bold */
+	color: var(--White); /* Color del texto */
+	padding: 18px 30px; /* Relleno del boton */
+	position: fixed;
+	transition: all 300ms ease 0ms;
+	z-index: 99;
+}
