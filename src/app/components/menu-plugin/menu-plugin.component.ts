@@ -56,7 +56,9 @@ export class MenuPluginComponent {
     }
   }
 
-  goMenu(): void {}
+  goMenu(): void {
+    this.router.navigate(['/menu/SolicitudesDeCitas']);
+  }
 
 
   logout(): void {
