@@ -38,14 +38,20 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import {MatCardModule} from '@angular/material/card';
+import { MenuPluginComponent } from './menu-plugin/menu-plugin.component';
+import { EvidenciaComponent } from './evidencia/evidencia.component';
 
 
 @NgModule({
   declarations: [
     BreadcrumbComponent,
+    MenuPluginComponent,
+    EvidenciaComponent
 
   ],
   exports: [
+    MenuPluginComponent,
+    EvidenciaComponent,
     NgbModule,
     MatBadgeModule,
     BreadcrumbComponent,

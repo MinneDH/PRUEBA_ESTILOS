@@ -1,0 +1,23 @@
+<!-- Version: Prod-23012023 -->
+
+
+<div class="modal-header header-modalPDF">
+    <h4 class="modal-title g-font-size-16 roboto-bold m-0">{{FileInput.name}}</h4>
+    <button class="close" aria-label="close" type="button" (click)="onNoClick()">
+
+    </button>
+</div>
+<div>
+    <div *ngIf="pdf" class="inner-contentPDF">
+        <iframe [src]="src_pdf"></iframe>
+    </div>
+    <div *ngIf="img" class="inner-contentImg">
+        <img [src]="src_img" />
+    </div>
+    <div *ngIf="audio" class="inner-contentPDF">
+        <iframe [src]="src_audio"></iframe>
+    </div>
+    <div *ngIf="video" class="inner-contentPDF">
+        <iframe [src]="src_video"></iframe>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="flex-container-menu">
+    <div class="row">
+        <div class="col-sm">
+            <div class="first-child noImprimir">
+                <h4 class="noImprimir">Universidad Veracruzana</h4>
+            </div>
+        </div>
+
+        <div class="second-child noImprimir">
+            <div *ngIf="show" class="first-grandchildren noImprimir">
+        
+                <button class="btn_header_01">
+                    <img src="assets/img/icons/ic_menu.svg" alt="Icono de menú" (click)="closeSidenav()" matTooltip="Menú">
+                </button>
+
+                
+                <button class="btn_header_02">
+                    <img src="assets/img/sa_white.svg" matTooltip="Ir a la pagina principal" alt="Logo del sistema y botón de Inicio" class="img_logo_menu noImprimir" (click)="goMenu()">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ContentMenu">
+        <div class="col-sm">
+            <mat-sidenav-container class="flex-size" autosize>
+                <mat-sidenav opened mode="side" #snav class="noImprimir">
+                        <mat-nav-list>
+                            <a mat-list-item (click)="main()" [ngClass]="Item_1" matTooltip="{{ EM.MENU.CD.TOOLTIP }}" matTooltipPosition="right" focusable="false">
+                                <div class="df">
+                                    <i class="fa-solid fa-file-lines icon"></i>
+                                    <div [ngClass]="classText" [innerHTML]="EM.MENU.CD.NAME"></div>
+                                </div>
+                            </a>
+                            <a mat-list-item (click)="proyectos()" [ngClass]="Item_2" matTooltip="{{ EM.MENU.GP.TOOLTIP }}" matTooltipPosition="right" focusable="false">
+                                <div class="df">
+                                    <i class="fa-solid fa-file-contract icon"></i>
+                                    <div [ngClass]="classText" [innerHTML]="EM.MENU.GP.NAME"></div>
+                                </div>
+                            </a>
+                            <a mat-list-item (click)="usuarios()" [ngClass]="Item_3" matTooltip="{{ EM.MENU.USSI.TOOLTIP }}" matTooltipPosition="right" focusable="false">
+                                <div class="df">
+                                    <i class="fa-solid fa-user icon"></i>
+                                    <div [ngClass]="classText" [innerHTML]="EM.MENU.USSI.NAME"></div>
+                                </div>
+                            </a>
+                            
+                        </mat-nav-list>
+                </mat-sidenav>
+                <mat-sidenav-content>
+                    <router-outlet></router-outlet>
+                </mat-sidenav-content>
+            </mat-sidenav-container>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+        <div class="footerMenu noImprimir">
+            <div class="text-center">
+            ©{{year}} Universidad Veracruzana
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+
+<!-- Version: Prod-23012023 -->
+
+<div class="viewfile">
+    <div class="modal-header header-modalPDF">
+        <h4 class="modal-title g-font-size-16 roboto-bold m-0">{{Title}}</h4>
+    
+        <button class="btn-close btn-close-white text-white" aria-label="close" type="button" (click)="onNoClick()">
+            
+        </button>
+    </div>
+    <div class="inner-contentPDF" >
+        <div  *ngIf="!img" >
+            <iframe [src]="pdfSrc"></iframe>
+        </div>
+        <div *ngIf="img">
+            <img [src]="pdfSrc"/>
+        </div>
+    </div>
+</div>
